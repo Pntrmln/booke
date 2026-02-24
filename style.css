@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+
+* {
+    font-family: "Funnel Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*===== font sizeok ===== */
+.fd-300 {
+  font-family: "Funnel Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+.fd-600 {
+  font-family: "Funnel Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/*===== font sizeok ===== */
+.fs-10 {
+    font-size: 10px;
+}
+.fs-20 {
+    font-size: 20px;
+}
+.fs-30 {
+    font-size: 30px;
+}
+.fs-40 {
+    font-size: 40px;
+}
+
+
+.width1400 {
+    max-width: 1400px;
+}
+/* .navbar {
+    padding-top: 0 !important;
+} */
+.disabled {
+    display: none;
+}
+#fejlec {
+    background-image: url('assets/placeholder.png');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    max-height: 100vh;
+    width: 100%;
+    align-items: center;
+    padding: 1rem;
+    display: table;
+}
+#middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+#inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  color: #fff;
+}
+
+@media screen and (max-width: 520px) {
+    #inner {
+        width: 450px;
+    }
+}
+.shadow_ {
+    text-shadow: 0px 0px 5px #000;
+    margin-bottom: 5px;
+}
+.foglals {
+    margin-top: 16px;
+    min-width: 140px;
+    min-height: 50px;
+    border-radius: 10px;
+    border-color: #fff;
+}
