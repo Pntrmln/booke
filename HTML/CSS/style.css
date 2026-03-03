@@ -11,12 +11,6 @@
 }
 
 /*===== font sizeok ===== */
-.fd-300 {
-  font-family: "Funnel Display", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
 .fd-600 {
   font-family: "Funnel Display", sans-serif;
   font-optical-sizing: auto;
@@ -54,15 +48,19 @@
 .disabled {
     display: none;
 }
+.sect_height {
+    height: calc(100vh - 56px);
+    max-height: calc(100vh - 56px);
+    width: 100%;
+    align-items: center;
+    padding: 2rem;
+}
 #fejlec {
+    margin-top: 56px;
     background-image: url('../assets/placeholder.png');
     background-position: center;
     background-size: cover;
-    height: 100vh;
-    max-height: 100vh;
-    width: 100%;
     align-items: center;
-    padding: 1rem;
 }
 #middle {
   display: table-cell;
@@ -82,9 +80,12 @@
         width: 450px;
     }
 }
-.shadow_ {
+.shadow_s {
     text-shadow: 0px 0px 8px #000;
     margin-bottom: 5px;
+}
+.shadow_w {
+    text-shadow: 0px 0px 3px #000;
 }
 .foglals {
     margin-top: 16px;
@@ -92,4 +93,32 @@
     min-height: 50px;
     border-radius: 10px;
     border-color: #fff;
+}
+#elerhetosegek {
+    background-color: #ff0000;
+}
+
+/* footerhez cucok*/
+#feet { /* gergő kedvence */
+    height: 100px;
+    max-height: 100px;
+    background-color: #4b4b4b;
+}
+#elso {
+    padding: 1.5rem;
+    border-right: white 3px solid;
+    height: 60px;
+}
+#elso > div > a, #masodik > div > a, #masodik > div > p {
+    color: white;
+    text-decoration: none;
+}
+#masodik {
+    padding: 1.5rem;
+    height: 60px;
+    margin-top: 10px;
+    flex: 1;
+}
+.max {
+    width: 100vw;
 }
