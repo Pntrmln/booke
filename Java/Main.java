@@ -1,30 +1,23 @@
-package org.example;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import  javax.swing.*;
 import java.util.ArrayList;
+import javax.swing.*;
 
 class asd extends JFrame {
 
     static JFrame frame;
-    static TextArea t1, t2, t3, t4, t5, t6, t7, t8;
-    static JComboBox c;
+    static JComboBox<String> c;
     static JButton b;
-    static JLabel l;
-
-    String asd = null;
+    static String strVendegOszlopok;
+    static int iSzobaOszlopok;
+    static String[] arrSzobak;
 
     void bevitel() {
-
-
-
         frame = new JFrame();
 
         frame.setSize(1280, 720);
@@ -32,112 +25,73 @@ class asd extends JFrame {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
-
         GridBagLayout gb = new GridBagLayout();
         GridBagConstraints gbc = new GridBagConstraints();
 
         frame.setLayout(gb);
 
-        t1 = new TextArea(1, 25);
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.gridx = 0;
-        gbc.gridy = 0;
         gbc.weightx = 0.5;
-        frame.add(t1, gbc);
-
-
-        t2 = new TextArea(1, 25);
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.gridx = 1;
         gbc.gridy = 0;
-        gbc.weightx = 0.5;
-        frame.add(t2, gbc);
-
-
-        t3 = new TextArea(1, 25);
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.gridx = 2;
-        gbc.gridy = 0;
-        gbc.weightx = 0.5;
-        frame.add(t3, gbc);
 
-        t4 = new TextArea(1, 25);
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.gridx = 3;
-        gbc.gridy = 0;
-        gbc.weightx = 0.5;
-        frame.add(t4, gbc);
+        int ivendegOszlopok = Integer.parseInt(strVendegOszlopok);
 
+        ArrayList<TextArea> taLista = new ArrayList<>();
 
-        String[] lista = new String[4];
+        for (int i = 0; i < ivendegOszlopok; i++){
+            gbc.gridx = i;
+            taLista.add(new TextArea(1, 25));
+            frame.add(taLista.get(i), gbc);
+        }
 
-        c = new JComboBox();
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.gridx = 4;
-        gbc.gridy = 0;
-        gbc.weightx = 0.5;
+        c = new JComboBox<>();
+        gbc.gridx += 1;
         frame.add(c, gbc);
 
+        for (String arrSzobak1 : arrSzobak) {
+            c.addItem(arrSzobak1);
+        }
 
         b = new JButton("asd");
-        gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.gridx = 2;
         gbc.gridy = 1;
         frame.add(b, gbc);
 
-
-        String finalAsd = asd;
-        b.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                lista[0] = t1.getText();
-                c.addItem(lista[0]);
-
-                lista[1] = t2.getText();
-                c.addItem(lista[1]);
-
-                lista[2] = t3.getText();
-                c.addItem(lista[2]);
-
-                lista[3] = t4.getText();
-                c.addItem(lista[3]);
-
-            }
+        b.addActionListener((ActionEvent e) -> {
+            System.out.println("asd");
         });
-
-
         frame.setVisible(true);
-
-
     }
 
     public static void main(String[] args) throws SQLException {
-
-        Connection conn = null;
-
         try {
-            conn = DriverManager.getConnection("jdbc:postgresql://pg.tamado.org:5432/Hotel", "postgres", "hungaryen");
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://pg.tamado.org:5432/Hotel", "postgres", "hungaryen");
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM test");
-
+            ResultSet rs = st.executeQuery("SELECT COUNT(*) FROM information_schema.columns WHERE table_name = 'vendegek'");
 
             while (rs.next()) {
-                System.out.print(rs.getString(1) + " ");
-                System.out.print(rs.getString(2));
-                System.out.println();
-
-
-
+                strVendegOszlopok = rs.getString(1);
             }
 
+            ResultSet rs2 = st.executeQuery("SELECT COUNT(*) FROM szobak");
 
-        } catch (Exception e) {
-            e.printStackTrace();
+            while (rs2.next()) {
+                iSzobaOszlopok = Integer.parseInt(rs2.getString(1));
+            }
+
+            System.out.println(iSzobaOszlopok);
+            arrSzobak = new String[iSzobaOszlopok];
+
+            ResultSet rs3 = st.executeQuery("SELECT nev FROM szobak");
+
+            for (int i = 0; i < iSzobaOszlopok && rs3.next(); i++){
+                arrSzobak[i] = rs3.getString(1);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Hiba: " + e.getMessage());
         }
 
-
-        //new asd().bevitel();
+        new asd().bevitel();
     }
-
-
 }
