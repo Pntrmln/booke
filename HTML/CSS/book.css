@@ -1,0 +1,19 @@
+main {
+    margin-top: 100px;
+}
+
+h5 {
+    display: inline-block;
+}
+
+#warn {
+    color: red;
+}
+
+#kij {
+    margin-left: 50px;
+}
+
+#szobaadatok {
+    background-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
+}

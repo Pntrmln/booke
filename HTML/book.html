@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foglalás</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/book.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <div class="container-fluid width1400">
+            <a class="navbar-brand">Booke Kuuke</a>
+            <div class="d-flex">
+                <a id="fooldal" onclick="navbar('fooldal')" class="p-2 nav-link disabled" href="#"><img width="16px"
+                        style="margin-bottom: 2px;" src="assets/arrow-left.svg"></img> Vissza a főoldalra</a>
+                <a id="szolg" onclick="navbar('szolg')" class="p-2 nav-link" href="#">Szolgáltatások</a>
+                <a id="szob" onclick="navbar('szob')" class="p-2 nav-link" href="#">Szobák</a>
+                <a id="aszf" onclick="navbar('aszf')" class="p-2 nav-link" href="#">ÁSZF</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container text-center">
+            <h1>Foglalás</h1>
+            <div class="row">
+                <div class="col text-center">
+                    <h3>Válasszon időpontot:</h3>
+                    <label>Bejelentkezés:</label>
+                    <input type="date">
+                    <label id="kij">Kijelentkezés:</label>
+                    <input type="date">
+                    <h3 class="mt-5">Válasszon szobát:</h3>
+                    <select>
+                        <option></option>
+                    </select>
+                    <h1 class="mt-5">Személyes adatok</h1>
+                    <h5>Teljes név:</h5>
+                    <input type="text" placeholder="Vezetéknév">
+                    <input type="text" placeholder="Keresztnév">
+                    <br>
+                    <h5>E-mail cím:</h5>
+                    <input type="email" placeholder="minta@cim.hu">
+                    <br>
+                    <h5>Telefonszám:</h5>
+                    <input type="tel" placeholder="06-50-123-4567">
+                    <br>
+                    <button class="btn btn-primary">Foglalás</button>
+                </div>
+                <div class="col text-center" id="szobaadatok">
+                    <h3>A szoba adatai:</h3>
+                    <h5 id="warn">Ön még nem választott szobát!</h5>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="JS/script.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+</body>
+
+</html>
