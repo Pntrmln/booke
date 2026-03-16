@@ -36,14 +36,14 @@ function nav() {
     $("body").prepend(`
         <nav class="navbar navbar-light bg-light fixed-top">
             <div class="container-fluid width1400">
-                <a class="navbar-brand">Booke Kuuke</a>
+                <a class="navbar-brand" onclick="klik('/')" href="#">Booke Kuuke</a>
                 <div class="d-flex">
-                    <a id="fooldal" class="p-2 nav-link fd-600 ${(window.location.pathname == "/HTML/" || window.location.pathname == "/HTML") ? "disabled" : ""}" href="/HTML/">
+                    <a id="fooldal" class="p-2 nav-link fd-600 ${(window.location.pathname == "/HTML/" || window.location.pathname == "/HTML") ? "disabled" : ""}" onclick="klik('/')" href="#">
                         <i class="fa-regular fa-arrow-left"></i> Vissza a főoldalra
                     </a>
-                    <a id="szolg" class="p-2 nav-link fd-600 ${(window.location.pathname == "/HTML/book") ? "disabled" : ""}" href="/HTML/book">Foglalás</a>
-                    <a id="szob" class="p-2 nav-link fd-600 ${(window.location.pathname == "/HTML/szobak") ? "disabled" : ""}" href="/HTML/szobak">Szobák</a>
-                    <a id="aszf" class="p-2 nav-link fd-600 ${(window.location.pathname == "/HTML/aszf") ? "disabled" : ""}" href="/HTML/aszf">ÁSZF</a>
+                    <a id="szolg" class="p-2 nav-link fd-600 ${(window.location.pathname == "/HTML/book") ? "disabled" : ""}" onclick="klik('/book')" href="#">Foglalás</a>
+                    <a id="szob" class="p-2 nav-link fd-600 ${(window.location.pathname == "/HTML/szobak") ? "disabled" : ""}" onclick="klik('/szobak')" href="#">Szobák</a>
+                    <a id="aszf" class="p-2 nav-link fd-600 ${(window.location.pathname == "/HTML/aszf") ? "disabled" : ""}" onclick="klik('/aszf')" href="#">ÁSZF</a>
                 </div>
             </div>
         </nav>
@@ -67,9 +67,9 @@ function footer() {
                 <div class="vonalka"></div>
                 <div>
                     <h5>Navigáció</h5>
-                    <a class="deco_none" href="/HTML/book"><p class="smol">Foglalás</p></a>
-                    <a class="deco_none" href="/HTML/szobak"><p class="smol">Szobák</p></a>
-                    <a class="deco_none" href="/HTML/aszf"><p class="smol">ÁSZF</p></a>
+                    <a class="deco_none" onclick="klik('/book')" href="#"><p class="smol">Foglalás</p></a>
+                    <a class="deco_none" onclick="klik('/szobak')" href="#"><p class="smol">Szobák</p></a>
+                    <a class="deco_none" onclick="klik('/aszf')" href="#"><p class="smol">ÁSZF</p></a>
                 </div>
             </div>
             <div class="h-vonalka"></div>
@@ -78,4 +78,7 @@ function footer() {
             </div>
         </footer>
     `)
+}
+function klik(site) {
+    window.location.href = `/HTML${site}`;
 }

@@ -60,6 +60,13 @@
     align-items: center;
     padding: 2rem;
 }
+.sect_height_szobak {
+    min-height: calc(100vh - 256px);
+    width: 100%;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 56px;
+}
 .sect {
     margin-top: 56px;
 }
