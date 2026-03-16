@@ -1,6 +1,6 @@
 function asd() {
     window.alert("szia faszos");
-    window.location.href = "book.html";
+    window.location.href = "/HTML/book";
 }
 // A fooldalnak mindig az elso helyen kell lennie! ˇˇˇ
 
@@ -27,9 +27,12 @@ function asd() {
 // }
 
 function nav() {
+
+    /* debug */
     console.log(window.location.pathname)
     console.log(window.location.pathname == "/HTML/")
     console.log(window.location.pathname == "/HTML/index.html")
+
     $("body").prepend(`
         <nav class="navbar navbar-light bg-light fixed-top">
             <div class="container-fluid width1400">
@@ -48,13 +51,13 @@ function nav() {
 }
 function footer() {
     $("asd").before(`
-        <footer id="feet" class="d-flex justify-content-center align-items-center">
-            <div id="elso" class="d-flex justify-content-center align-items-center">
+        <footer id="feet" class="d-flex flex-column align-items-center justify-content-center">
+            <div id="felso" class="d-flex align-items-center gap-5">
                 <div>
-                    <a href="#" class="fs-50 fd-600 shadow_w">Booke Kuuke</a>
+                    <h2>Booke Kuuke</h2>
+                    <p>A hotel ahol a közös fütyizés<br>teret nyer a pajtásokkal</p>
                 </div>
-            </div>
-            <div id="masodik" class="d-flex align-items-center gap-4">
+                <div class="vonalka"></div>
                 <div>
                     <h5>Elérhetőségeink</h5>
                     <a class="deco_none" href="#"><p class="smol"><i class="fa-regular fa-phone"></i> +36 70 ott repül batman</p></a>
@@ -68,6 +71,10 @@ function footer() {
                     <a class="deco_none" href="/HTML/szobak"><p class="smol">Szobák</p></a>
                     <a class="deco_none" href="/HTML/aszf"><p class="smol">ÁSZF</p></a>
                 </div>
+            </div>
+            <div class="h-vonalka"></div>
+            <div id="also" class="text-center">
+                <p>&copy; 2026 MDO works</p>
             </div>
         </footer>
     `)

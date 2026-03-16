@@ -54,6 +54,12 @@
     align-items: center;
     padding: 2rem;
 }
+.sect_height_book {
+    min-height: calc(100vh - 256px);
+    width: 100%;
+    align-items: center;
+    padding: 2rem;
+}
 .sect {
     margin-top: 56px;
 }
@@ -96,28 +102,19 @@
     border-color: #fff;
 }
 #elerhetosegek {
-    background-color: #ff0000;
+    background-color: #ccdb72;
 }
 .kozepre {
     margin-left: auto;
     margin-right: auto;
 }
 /* footerhez cucok*/
-#feet { /*gregor kedvence*/
+#feet { /* gregor kedvence*/
     background-color: #4b4b4b;
     min-height: 100px;
+    padding: 1rem 2rem;
 }
-#elso {
-    padding: 1.5rem;
-    border-right: white 3px solid;
-}
-#elso a {
-    color: white;
-    text-decoration: none;
-}
-#masodik {
-    padding: 1.5rem;
-    flex: 1;
+#felso {
     color: white;
 }
 .deco_none {
@@ -128,10 +125,21 @@
     color: #fff;
 }
 .vonalka {
-    height: 50px;
+    height: 70px;
     width: 1px;
     border: #fff 2px solid;
     border-radius: 1rem;
+}
+.h-vonalka {
+    margin: 1rem 0 1rem 0;
+    height: 1px;
+    width: 1350px;
+    border: #fff 1px solid;
+    border-radius: 1rem;
+}
+#also p {
+    color: white;
+    margin: 0;
 }
 
 /* aszf(uck) részhesz*/

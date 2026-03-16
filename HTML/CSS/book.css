@@ -16,4 +16,5 @@ h5 {
 
 #szobaadatok {
     background-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
+    border-radius: 1rem;
 }
