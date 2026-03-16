@@ -30,20 +30,20 @@ function nav() {
 
     /* debug */
     console.log(window.location.pathname)
-    console.log(window.location.pathname == "/HTML/")
-    console.log(window.location.pathname == "/HTML/index.html")
+    console.log(window.location.pathname == "/booke/HTML/")
+    console.log(window.location.pathname == "/booke/HTML/index.html")
 
     $("body").prepend(`
         <nav class="navbar navbar-light bg-light fixed-top">
             <div class="container-fluid width1400">
                 <a class="navbar-brand" onclick="klik('/')" href="#">Booke Kuuke</a>
                 <div class="d-flex">
-                    <a id="fooldal" class="p-2 nav-link fd-600 ${(window.location.pathname == "/HTML/" || window.location.pathname == "/HTML") ? "disabled" : ""}" onclick="klik('/')" href="#">
+                    <a id="fooldal" class="p-2 nav-link fd-600 ${(window.location.pathname == "/booke/HTML/" || window.location.pathname == "/booke/HTML") ? "disabled" : ""}" onclick="klik('/')" href="#">
                         <i class="fa-regular fa-arrow-left"></i> Vissza a főoldalra
                     </a>
-                    <a id="szolg" class="p-2 nav-link fd-600 ${(window.location.pathname == "/HTML/book") ? "disabled" : ""}" onclick="klik('/book')" href="#">Foglalás</a>
-                    <a id="szob" class="p-2 nav-link fd-600 ${(window.location.pathname == "/HTML/szobak") ? "disabled" : ""}" onclick="klik('/szobak')" href="#">Szobák</a>
-                    <a id="aszf" class="p-2 nav-link fd-600 ${(window.location.pathname == "/HTML/aszf") ? "disabled" : ""}" onclick="klik('/aszf')" href="#">ÁSZF</a>
+                    <a id="szolg" class="p-2 nav-link fd-600 ${(window.location.pathname == "/booke/HTML/book") ? "disabled" : ""}" onclick="klik('/book')" href="#">Foglalás</a>
+                    <a id="szob" class="p-2 nav-link fd-600 ${(window.location.pathname == "/booke/HTML/szobak") ? "disabled" : ""}" onclick="klik('/szobak')" href="#">Szobák</a>
+                    <a id="aszf" class="p-2 nav-link fd-600 ${(window.location.pathname == "/booke/HTML/aszf") ? "disabled" : ""}" onclick="klik('/aszf')" href="#">ÁSZF</a>
                 </div>
             </div>
         </nav>
