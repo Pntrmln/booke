@@ -1,6 +1,6 @@
 function asd() {
     window.alert("szia faszos");
-    window.location.href = "/HTML/book";
+    klik('/book');
 }
 // A fooldalnak mindig az elso helyen kell lennie! ˇˇˇ
 
@@ -80,5 +80,5 @@ function footer() {
     `)
 }
 function klik(site) {
-    window.location.href = `/HTML${site}`;
+    window.location.href = `/booke/HTML${site}`;
 }
